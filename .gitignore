@@ -1,8 +1,8 @@
 # VS
 obj/
-[Bb]in/
-[Dd]ebug*/
-[Rr]elease*/
+[bB]in/
+[dD]ebug*/
+[rR]elease*/
 *.sln.cache
 *.sln.DotSettings
 *.suo
