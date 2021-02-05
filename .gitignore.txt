@@ -1,0 +1,13 @@
+# VS
+obj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+*.sln.cache
+*.sln.DotSettings
+*.suo
+*.cache
+*.bak
+*.log
+*.dll
+*.pdb
