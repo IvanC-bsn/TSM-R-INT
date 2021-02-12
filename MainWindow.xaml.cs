@@ -27,10 +27,6 @@ namespace TubeSheetRobot
             parser.ParseFile();
             var viewModel = new TubesheetModel(parser.diameter, parser.pitch, parser.listOfElements);
             this.DataContext = viewModel;
-
-            //var listOfAllelements = parser.listOfElements;
-            //var diameter = parser._diameter;
-            //var pitch = parser._pitch;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,6 +38,11 @@ namespace TubeSheetRobot
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ((e.OriginalSource as Button).DataContext as Model).ResetCoordinates();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            cbx.SelectedIndex = 0;
         }
     }
 }

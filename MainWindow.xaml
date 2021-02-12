@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TubeSheetRobot"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="850" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,16 +40,17 @@
                     <ColumnDefinition Width ="*"/>
                     <ColumnDefinition Width ="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0">Starting Node</TextBlock>
-                <TextBox Grid.Column="1" IsReadOnly="True" DataContext="{Binding Model}" Text="{Binding StartingNode}"></TextBox>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width ="*"/>
-                    <ColumnDefinition Width ="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0">End Node</TextBlock>
-                <TextBox Grid.Column="1" IsReadOnly="True" DataContext="{Binding Model}" Text="{Binding EndNode}"></TextBox>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0">Starting Node</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" DataContext="{Binding Model}" Text="{Binding StartingNode}"></TextBox>
+                <TextBlock Grid.Row="1" Grid.Column="0">End Node</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" DataContext="{Binding Model}" Text="{Binding EndNode}"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Orientation"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Name="cbx" DataContext="{Binding Model}" ItemsSource="{Binding StartingAngleCollection}" SelectedValue="{Binding StartingAngle}"/>
             </Grid>
             <TextBlock>Path</TextBlock>
             <TextBox IsReadOnly="True" DataContext="{Binding Model}" Text="{Binding Path}" TextWrapping="Wrap"></TextBox>
